@@ -4,7 +4,7 @@ import { WeekComponent } from './week/week.component';
 import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
-  { path: 'bookcase', component: WeekComponent },
+  { path: 'week', component: WeekComponent },
   { path: 'login', component: LoginComponent },
   { path: '', component: LoginComponent }
 ];

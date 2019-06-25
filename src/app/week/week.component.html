@@ -1,29 +1,18 @@
 <table class="table table-bordered table-dark">
     <thead>
         <tr>
-            <th scope="col">#</th>
-            <th scope="col">Primeiro</th>
-            <th scope="col">Último</th>
-            <th scope="col">Nickname</th>
+            <th scope="col">=]</th>
+            <th scope="col" *ngFor="let day of weekdays">{{day}}</th>
         </tr>
     </thead>
     <tbody>
-        <tr>
-            <th scope="row">1</th>
-            <td>Mark</td>
-            <td>Otto</td>
-            <td>@mdo</td>
-        </tr>
-        <tr>
-            <th scope="row">2</th>
-            <td>Jacob</td>
-            <td>Thornton</td>
-            <td>@fat</td>
-        </tr>
-        <tr>
-            <th scope="row">3</th>
-            <td colspan="2">Larry the Bird</td>
-            <td>@twitter</td>
+        <tr *ngFor="let hour of hours">
+            <th scope="row">{{hour}}</th>
+            <td><input class="form-check-input" type="radio" value="{{hour}}1" name="exampleRadios"></td>
+            <td><input class="form-check-input" type="radio" value="{{hour}}2" name="exampleRadios"></td>
+            <td><input class="form-check-input" type="radio" value="{{hour}}3" name="exampleRadios"></td>
+            <td><input class="form-check-input" type="radio" value="{{hour}}4" name="exampleRadios"></td>
+            <td><input class="form-check-input" type="radio" value="{{hour}}5" name="exampleRadios"></td>
         </tr>
     </tbody>
 </table>
