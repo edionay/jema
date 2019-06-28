@@ -1,0 +1,100 @@
+<div class="row">
+    <h1>Agendamentos</h1>
+</div>
+<div>
+    <p>Olá, {{ currentUser.name }}.<a [routerLink]="" (click)="logoff()"> (Não é você? Clique para sair)</a></p>
+    <p>Por favor, selecione e confirme uma data para sua entrevista.</p>
+</div>
+
+
+<div class="row">
+    <div class="col-12 col-md-3" *ngFor="let day of days">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Terça (02/07)</h5>
+                <div class="list-group">
+                    <ng-container *ngIf="!day.available">
+                        <p>Horários indisponíveis</p>
+                    </ng-container>
+                    <div *ngFor="let time of day.hours" [hidden]="!day.available">
+                        <a [routerLink]="" (click)="selectTime(time)" *ngIf="!time.appointment1 || !time.appointment2" class="list-group-item list-group-item-action" [class.active]="time === selectedTime">{{ time.label }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="col-12 col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Quarta (03/07)</h5>
+                <div class="list-group">
+                    <ng-container *ngIf="!quarta.available">
+                        <p>Horários indisponíveis</p>
+                    </ng-container>
+                    <div *ngFor="let time of quarta.hours" [hidden]="!quarta.available">
+                        <a [routerLink]="" (click)="selectTime(time)" *ngIf="!time.appointment1 || !time.appointment2" class="list-group-item list-group-item-action" [class.active]="time === selectedTime">{{ time.label }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Quinta (04/07)</h5>
+                <div class="list-group">
+                    <ng-container *ngIf="!quinta.available">
+                        <p>Horários indisponíveis</p>
+                    </ng-container>
+                    <div *ngFor="let time of quinta.hours" [hidden]="!quinta.available">
+                        <a [routerLink]="" (click)="selectTime(time)" *ngIf="!time.appointment1 || !time.appointment2" class="list-group-item list-group-item-action" [class.active]="time === selectedTime">{{ time.label }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 col-md-3">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Sexta (05/07)</h5>
+                <div class="list-group">
+                    <ng-container *ngIf="!sexta.available">
+                        <p>Horários indisponíveis</p>
+                    </ng-container>
+                    <div *ngFor="let time of sexta.hours" [hidden]="!sexta.available">
+                        <a [routerLink]="" (click)="selectTime(time)" *ngIf="!time.appointment1 || !time.appointment2" class="list-group-item list-group-item-action" [class.active]="time === selectedTime">{{ time.label }}</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+<!-- Button trigger modal -->
+<div class="text-center">
+    <button type="button" class="btn btn-primary fab" [hidden]="!selectedTime" data-toggle="modal" data-target="#exampleModalCenter">
+                Agendar
+              </button>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">Confirma o agendamento?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                {{ selectedTime }}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Canncelar</button>
+                <button type="button" class="btn btn-primary">Confirmar</button>
+            </div>
+        </div>
+    </div>
+</div>

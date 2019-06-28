@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { WeekComponent } from './week/week.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 import { LoginComponent } from './login/login.component';
+import { AppointmentComponent } from './appointment/appointment.component';
 
 const routes: Routes = [
-  { path: 'week', component: WeekComponent },
+  { path: '', component: ScheduleComponent },
+  { path: 'schedule', component: ScheduleComponent },
   { path: 'login', component: LoginComponent },
-  { path: '', component: LoginComponent }
+  { path: 'appointment', component: AppointmentComponent },
 ];
 
 @NgModule({

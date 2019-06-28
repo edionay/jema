@@ -1,0 +1,11 @@
+.list-group {
+    max-height: 400px;
+    margin-bottom: 10px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.fab {
+    position: fixed;
+    bottom: 50px;
+}

@@ -1,25 +1,28 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { User } from './user'
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class LoginService {
+  private apiURL = `http://localhost:8080`;
+  currentUser = ""
 
-  private apiURL = `http://localhost:8080/api/login`
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   signIn(credentials) {
-    return this.http.post(`${this.apiURL}/signup`, credentials)
+    return this.http.post(`${this.apiURL}/login`, credentials);
+  }
+
+  getDays() {
+    return this.http.get(`${this.apiURL}/days`);
   }
 
   getCurrentUser() {
-
+    return this.currentUser;
   }
 
   setCurrentUser(user) {
-
+    this.currentUser = user
   }
 }
