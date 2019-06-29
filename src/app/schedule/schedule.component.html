@@ -10,7 +10,7 @@
     <div class="col-12 col-md-3" *ngFor="let day of days">
         <div class="card">
             <div class="card-body">
-                <h5 class="card-title">{{ day.label }} (02/07)</h5>
+                <h5 class="card-title">{{ day.label }} {{day.date}}</h5>
                 <div class="list-group">
                     <ng-container *ngIf="!day.available">
                         <p>Horários indisponíveis</p>

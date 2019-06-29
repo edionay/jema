@@ -5,7 +5,7 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root"
 })
 export class LoginService {
-  private apiURL = `http://localhost:8080`;
+  private apiURL = `https://sheltered-plateau-68464.herokuapp.com`;
   currentUser = "";
 
   constructor(private http: HttpClient) {}
