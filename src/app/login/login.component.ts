@@ -14,6 +14,7 @@ export class LoginComponent implements OnInit {
   };
 
   loading = false;
+  wrongCredentials: boolean = false;
 
   constructor(private router: Router, private loginService: LoginService) {}
 
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
       },
       error => {
         this.loading = false;
+        this.wrongCredentials = true
       }
     );
   }

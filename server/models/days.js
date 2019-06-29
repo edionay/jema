@@ -4,6 +4,7 @@ const daysSchema = mongoose.Schema({
     label: { type: String, required: true },
     hours: [{
         label: String,
+        date: String,
         available: {
             type: Boolean,
             default: true

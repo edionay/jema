@@ -1,1 +1,7 @@
-<p>appointment works!</p>
+<div class="card" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">Confira seu agendamento</h5>
+        <h6 class="card-subtitle mb-2 text-muted">{{ currentUser.name }}</h6>
+        <p class="card-text">{{ currentUser.schedule.day }}, {{ currentUser.schedule.date }} às {{ currentUser.schedule.time }}</p>
+    </div>
+</div>

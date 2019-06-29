@@ -1,5 +1,6 @@
 const Users = require('./../models/users')
 
-module.exports.getOne = async function(user) {
-    return await Users.findOne({ email: user.email, passcode: user.passcode })
+module.exports.getOne = async function(email, passcode) {
+    console.log(email, passcode)
+    return await Users.findOne({ email, passcode })
 }

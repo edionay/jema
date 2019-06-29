@@ -6,7 +6,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class LoginService {
   private apiURL = `http://localhost:8080`;
-  currentUser = ""
+  currentUser = "";
 
   constructor(private http: HttpClient) {}
 
@@ -23,6 +23,10 @@ export class LoginService {
   }
 
   setCurrentUser(user) {
-    this.currentUser = user
+    this.currentUser = user;
+  }
+
+  schedule(user, selectedTime) {
+    return this.http.post(`${this.apiURL}/schedule`, { user, selectedTime });
   }
 }

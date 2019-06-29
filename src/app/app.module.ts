@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 import { AppointmentComponent } from './appointment/appointment.component';
+import { AppointmentsComponent } from './appointments/appointments.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ScheduleComponent,
-    AppointmentComponent
+    AppointmentComponent,
+    AppointmentsComponent
   ],
   imports: [
     BrowserModule,

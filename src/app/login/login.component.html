@@ -16,6 +16,9 @@
                     </div>
                   </div>
             </button>
+            <div [hidden]="!wrongCredentials" class="alert alert-danger" role="alert">
+                Credenciais incorretas
+            </div>
         </div>
     </form>
 </div>
