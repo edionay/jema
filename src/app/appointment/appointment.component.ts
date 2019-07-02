@@ -10,14 +10,7 @@ import { LoginService } from "../login.service";
 export class AppointmentComponent implements OnInit {
   constructor(private router: Router, private loginService: LoginService) {}
 
-  currentUser: any = {
-    name: "",
-    schedule: {
-      day: "",
-      date: "",
-      time: ""
-    }
-  };
+  currentUser: any;
 
   ngOnInit() {
     this.currentUser = this.loginService.getCurrentUser();

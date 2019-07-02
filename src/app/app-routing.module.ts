@@ -6,7 +6,7 @@ import { AppointmentComponent } from './appointment/appointment.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent },
-  { path: 'schedule', component: ScheduleComponent },
+  // { path: 'schedule', component: ScheduleComponent },
   { path: 'login', component: LoginComponent },
   { path: 'appointment', component: AppointmentComponent },
 ];

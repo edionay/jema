@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       loggedUser => {
         this.loading = false;
         this.loginService.setCurrentUser(loggedUser);
-        this.router.navigate(["/schedule"]);
+        this.router.navigate(["/appointment"]);
       },
       error => {
         this.loading = false;

@@ -1,5 +1,9 @@
-<div class="card" style="width: 18rem;">
-    <div class="card-body">
+<div *ngIf="currentUser" class="card" style="width: 18rem;">
+    <div *ngIf="currentUser.upToVote" class="card-body">
+        <h5 class="card-title">O prazo para agendamento foi encerrado!</h5>
+    </div>
+
+    <div *ngIf="!currentUser.upToVote" class="card-body">
         <h5 class="card-title">Agendamento confirmado!</h5>
         <h6 class="card-subtitle mb-2 text-muted">{{ currentUser.name }}</h6>
         <p class="card-text">{{ currentUser.schedule.day }}, {{ currentUser.schedule.date }} às {{ currentUser.schedule.time }}</p>
